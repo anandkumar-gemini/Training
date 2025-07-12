@@ -7,9 +7,9 @@ inputs:
     type: uri_folder
   test_data:
     type: uri_folder
-  criterion:
-    type: string
-    default: gini
+  n_estimators:
+    type: integer
+    default: 100
   max_depth:
     type: integer
     default: 5
