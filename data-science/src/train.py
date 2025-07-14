@@ -68,9 +68,9 @@ def main(args):
     yhat_test = model.predict(X_test)
 
     # Compute and log mean_squared_error
-    mse = mean_squared_error(y_test, tree_predictions)
-    r2 = r2_score(y_test, tree_predictions)
-    mae = mean_absolute_error(y_test, tree_predictions)
+    mse = mean_squared_error(y_test, yhat_test)
+    r2 = r2_score(y_test, yhat_test)
+    mae = mean_absolute_error(y_test, yhat_test)
     
     print(f'Mean Squared Error: {mse:.2f}')
     # Logging the R2 score as a metric
