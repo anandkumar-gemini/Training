@@ -53,7 +53,7 @@ def main(args):
 
     # Log model hyperparameters
     mlflow.log_param("model", "RandomForestRegressor")
-    mlflow.log_param("criterion", args.n_estimators)
+    mlflow.log_param("n_estimators", args.n_estimators)
     mlflow.log_param("max_depth", args.max_depth)
 
     # Predict using the Decision Tree Model on test data
@@ -83,7 +83,7 @@ if __name__ == "__main__":
         f"Train dataset input path: {args.train_data}",
         f"Test dataset input path: {args.test_data}",
         f"Model output path: {args.model_output}",
-        f"Criterion: {args.criterion}",
+        f"n_estimators: {args.n_estimators}",
         f"Max Depth: {args.max_depth}"
     ]
 
