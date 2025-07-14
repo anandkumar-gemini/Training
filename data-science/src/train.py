@@ -43,10 +43,17 @@ def main(args):
     test_df = pd.read_csv(Path(args.test_data)/"test.csv")
 
     # Split the data into input(X) and output(y)
-    y_train = train_df['price']
-    X_train = train_df.drop(columns=['price'])
-    y_test = test_df['price']
-    X_test = test_df.drop(columns=['price'])
+    y_train = train_df.iloc[:, -1]
+    X_train = train_df.iloc[:, :-1]
+    y_test = test_df.iloc[:, -1]
+    X_test = test_df.iloc[:, :-1]
+
+    # One-hot encode categorical columns
+    X_train = pd.get_dummies(X_train)
+    X_test  = pd.get_dummies(X_test)
+
+    # Align test data with training columns
+    X_train, X_test = X_train.align(X_test, join='left', axis=1, fill_value=0)
 
     # Initialize and train a Random forest regressor
     model = RandomForestRegressor(n_estimators=args.n_estimators, max_depth=args.max_depth, random_state=42)
