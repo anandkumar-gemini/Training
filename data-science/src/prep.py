@@ -33,8 +33,8 @@ def main(args):
     # Encoding the categorical 'Type' column
     # Note: We should ideally use one-hot encoding here as there's no inherent order between the categories
     # However, as we're using a decision tree model, label encoding also works here
-    label_encoder = LabelEncoder()
-    df['Type'] = label_encoder.fit_transform(df['Type'])
+    #label_encoder = LabelEncoder()
+    #df['Type'] = label_encoder.fit_transform(df['Type'])
 
     # Split Data into train and test datasets
     train_df, test_df = train_test_split(df, test_size=args.test_train_ratio, random_state=42)
