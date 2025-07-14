@@ -21,7 +21,7 @@ command: >-
   python train.py 
   --train_data ${{inputs.train_data}}
   --test_data ${{inputs.test_data}}
-  --criterion ${{inputs.criterion}}
+  --n_estimators ${{inputs.n_estimators}}
   --max_depth ${{inputs.max_depth}}
   --model_output ${{outputs.model_output}}
 environment: azureml:machine-failure-train-env@latest
