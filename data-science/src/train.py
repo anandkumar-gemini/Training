@@ -8,6 +8,7 @@ import mlflow
 import argparse
 import os
 import pandas as pd
+from pathlib import Path
 from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from sklearn.pipeline import make_pipeline
 from sklearn.compose import make_column_transformer
